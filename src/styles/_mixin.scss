@@ -1,0 +1,25 @@
+@mixin flex($direction, $horizontal, $vertical) {
+  display: flex;
+
+  @if $direction != null {
+    flex-direction: $direction;
+  }
+
+  @if $horizontal != null {
+    justify-content: $horizontal;
+  }
+
+  @if $vertical != null {
+    align-items: $vertical;
+  }
+}
+
+@mixin test($bg, $br) {
+  @if $bg != null {
+    background-color: $bg;
+  }
+
+  @if $br != null {
+    border: 1px solid $br;
+  }
+}

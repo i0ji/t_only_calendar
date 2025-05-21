@@ -1,14 +1,6 @@
-// import React from 'react';
 import styles from './App.module.scss';
+console.log('вывв');
 
-const App: React.FC = () => {
-  return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>
-        Hteee
-      </h1>
-    </div>
-  );
-};
-
-export default App;
+export default function App() {
+  return <div className={styles.container}>Hello world</div>;
+}

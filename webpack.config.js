@@ -6,40 +6,39 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.[contenthash].js',
+    filename: 'bundle.js',
     clean: true,
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
   module: {
     rules: [
       {
-        test: /\.[jt]sx?$/,
+        test: /\.(ts|tsx|js|jsx)$/,
         exclude: /node_modules/,
         use: 'babel-loader',
       },
       {
-        test: /\.module\.scss$/,
+        test: /\.scss$/i,
         use: [
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
+              esModule: false,
               modules: {
                 exportLocalsConvention: 'camelCase',
-                localIdentName: '[name]__[local]--[hash:base64:5]',
+                auto: true,
+                localIdentName:
+                  '[name]__[local]--[hash:base64:5]',
               },
-              esModule: false,
             },
           },
-          'sass-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              implementation: require('sass'),
+            },
+          },
         ],
-      },
-      {
-        test: /\.scss$/,
-        exclude: /\.module\.scss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
     ],
   },
@@ -52,10 +51,15 @@ module.exports = {
     }),
   ],
   devServer: {
-    static: path.resolve(__dirname, 'dist'),
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    compress: true,
     port: 3000,
     hot: true,
     open: true,
   },
-  mode: 'development',
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+  },
 };
