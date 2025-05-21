@@ -1,3 +1,16 @@
 @forward 'reset';
 @forward 'colors';
 @forward 'mixin';
+@forward 'font';
+
+@use 'mixin' as mixin;
+@use 'colors' as colors;
+
+body {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  background: colors.$brand-gray-bg;
+
+  overflow: hidden;
+}

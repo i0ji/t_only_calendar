@@ -1,6 +1,5 @@
-$brand_gray_bg: rgba(226, 229, 236, .6);
-$brand_gray_border: rgba(196, 196, 198, .7);
+$brand-gray-bg: rgba(226, 229, 236, .6);
 
-body {
-    background: $brand_gray_bg;
+@function brand-dark-blue($opacity: 1) {
+  @return rgba(66, 86, 122, $opacity);
 }

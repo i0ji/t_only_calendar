@@ -1,9 +1,40 @@
 @use '/src/styles/index' as *;
 
-.container {
-  border: 1px solid $brand_gray_border;
+.main {
+  position: relative;
+  border: 1px solid brand-dark-blue(0.1);
 
-  width: 400px;
-  height: 400px;
-  padding: 20px;
+  width: 100%;
+  height: 100vh;
+
+  .title {
+    position: absolute;
+    left: 0;
+    top: 10%;
+
+    width: 30%;
+
+    @include flex(null, space-between, center);
+
+    hr {
+      width: 5px;
+      height: 120px;
+
+      background: linear-gradient(
+        180deg,
+        #ef5da8 0%,
+        #3877ee 100%
+      );
+    }
+
+    h1 {
+      padding-bottom: 5px;
+
+      color: brand-dark-blue(0.8);
+
+      line-height: 120%;
+      font-weight: 700;
+      font-size: 56px;
+    }
+  }
 }
