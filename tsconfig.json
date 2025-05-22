@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "skipLibCheck": false,
     "forceConsistentCasingInFileNames": true,
-    "typeRoots": ["./node_modules/@types", "./src/services","./src/types",],
+    "typeRoots": ["./node_modules/@types","./src/types",],
     "types": ["node"]
   },
   "include": ["src"]

@@ -3,5 +3,4 @@ Test for Only:
 project init using webpack/react/sass/ts/git flow; repo init; first dev run; styling and preparigne env;
 main markup, style, set webpack;
 22.05.25:
-add nanoid lib;
-add data sets;
+add nanoid lib; add data sets; start swiper;
