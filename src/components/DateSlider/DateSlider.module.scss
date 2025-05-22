@@ -1,6 +1,8 @@
 @use '/src/styles/index' as *;
 
 .slider {
+  max-width: 1440px;
+  margin: 0 auto;
   .slider_item {
     display: flex;
     flex-direction: column;
