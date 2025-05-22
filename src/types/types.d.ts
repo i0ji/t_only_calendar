@@ -3,13 +3,14 @@ interface IEvent {
   description: string;
 }
 
-interface IDataSet {
+interface IDataContent {
   id: number;
+  count_number: number;
   name: string;
   events: Array<IEvent>;
 }
 
-interface PointData {
+interface IPointData {
   id: number;
   label: string;
   content: React.ReactNode;

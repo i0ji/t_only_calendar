@@ -3,13 +3,12 @@
 .carousel {
   text-align: center;
   user-select: none;
-  margin-top: 60px;
 
   &_container {
     position: relative;
     width: var(--slider-size);
     height: var(--slider-size);
-    margin: 0 auto;
+    margin: 9% auto;
   }
   .crossLines {
     position: absolute;
@@ -30,6 +29,26 @@
     height: 100%;
     background-color: rgba(0, 123, 255, 0.2);
     transform: translateX(-50%);
+  }
+
+  .float_date {
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 53%;
+        display: flex;
+    justify-content: space-between;
+    font-size: 9rem;
+    font-weight: bold;
+
+    &_left {
+        color: $brand-accent-blue;
+    }
+
+    &_right {
+        color: $brand-accent-pink;
+    }
   }
 
   .lineHorizontal {
@@ -64,8 +83,8 @@
 
     &_item {
       position: absolute;
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: brand-dark-blue(0.8);
       cursor: pointer;
@@ -107,10 +126,10 @@
 
   .label {
     position: absolute;
-    top: 13%;
-    right: -10%;
+    top: 11%;
+    right: -15%;
     transform: translateY(-50%);
-    color: var(--point-active-bg);
+    color: brand-dark-blue(1);
     font-weight: bold;
     font-size: 18px;
     white-space: nowrap;

@@ -1,8 +1,46 @@
+const science_data1 = {
+  id: 10001,
+  count_number: 1,
+  label: 'Наука',
+  content: [
+    {
+      year: 2015,
+      description:
+        '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды',
+    },
+    {
+      year: 2016,
+      description:
+        'Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11',
+    },
+    {
+      year: 2017,
+      description:
+        'Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi',
+    },
+    {
+      year: 2018,
+      description:
+        'Старт космического аппарата Solar Probe Plus, предназначенного для изучения солнца',
+    },
+    {
+      year: 2019,
+      description:
+        'Google объявил о создании 53-кубитного квантового компьютера',
+    },
+    {
+      year: 2020,
+      description:
+        'Корабль Crew Dragon вернулся на землю из первого пилотируемого полёта',
+    },
+  ],
+};
+
 const cinema_data = {
   id: 20001,
-  count_number: 1,
-  name: 'Кино',
-  events: [
+  count_number: 2,
+  label: 'Кино',
+  content: [
     {
       year: 1987,
       description:
@@ -33,9 +71,9 @@ const cinema_data = {
 
 const literature_data = {
   id: 30001,
-  count_number: 2,
-  name: 'Литература',
-  events: [
+  count_number: 3,
+  label: 'Литература',
+  content: [
     {
       year: 1992,
       description:
@@ -57,9 +95,9 @@ const literature_data = {
 
 const theater_data = {
   id: 40001,
-  count_number: 3,
-  name: 'Театр',
-  events: [
+  count_number: 4,
+  label: 'Театр',
+  content: [
     {
       year: 1999,
       description:
@@ -78,11 +116,49 @@ const theater_data = {
   ],
 };
 
-const science_data = {
+const science_data5 = {
+  id: 50001,
+  count_number: 5,
+  label: 'Наука',
+  content: [
+    {
+      year: 2015,
+      description:
+        '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды',
+    },
+    {
+      year: 2016,
+      description:
+        'Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11',
+    },
+    {
+      year: 2017,
+      description:
+        'Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi',
+    },
+    {
+      year: 2018,
+      description:
+        'Старт космического аппарата Solar Probe Plus, предназначенного для изучения солнца',
+    },
+    {
+      year: 2019,
+      description:
+        'Google объявил о создании 53-кубитного квантового компьютера',
+    },
+    {
+      year: 2020,
+      description:
+        'Корабль Crew Dragon вернулся на землю из первого пилотируемого полёта',
+    },
+  ],
+};
+
+const science_data6 = {
   id: 60001,
-  count_number: 4,
-  name: 'Наука',
-  events: [
+  count_number: 6,
+  label: 'Наука',
+  content: [
     {
       year: 2015,
       description:
@@ -117,8 +193,10 @@ const science_data = {
 };
 
 export const data_set = [
+  science_data1,
   cinema_data,
   literature_data,
   theater_data,
-  science_data,
+  science_data5,
+  science_data6,
 ];

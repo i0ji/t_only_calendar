@@ -1,38 +1,41 @@
-import './DateSlider.module.scss';
+import styles from './DateSlider.module.scss';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-export default function DateSlider() {
+export default function DateSlider({
+  data,
+}: {
+  data: Array<IEvent>;
+}) {
   return (
-    <div className="slider-container">
+    <div className={styles.slider}>
       <Swiper
-        slidesPerView={1}
+        slidesPerView={3.5}
         spaceBetween={30}
-        loop={true}
-        modules={[Navigation, Pagination]}
+        loop={false}
+        modules={[Navigation]}
         pagination={{
           clickable: true,
         }}
         navigation={true}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <div className="slide-content">Slide 1</div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="slide-content">Slide 2</div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="slide-content">Slide 3</div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="slide-content">Slide 4</div>
-        </SwiperSlide>
+        {data.map((content_item, i) => {
+          return (
+            <SwiperSlide key={i}>
+              <div className={styles.slider_item}>
+                <h5>{content_item.year}</h5>
+
+                <p>{content_item.description}</p>
+              </div>
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </div>
   );

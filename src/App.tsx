@@ -1,6 +1,5 @@
 import styles from './App.module.scss';
 import DateCarousel from './components/DateCarousel/DateCarousel';
-import DateSlider from './components/DateSlider/DateSlider';
 
 console.log('22.05.25/0.1.0');
 
