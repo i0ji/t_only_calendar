@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
+import styles from './DateCarousel.module.scss';
 
-
-const points: PointData[] = [
+const points = [
   {
     id: 0,
     label: 'Точка 1',
@@ -35,98 +35,62 @@ const points: PointData[] = [
   },
 ];
 
-const radius = 120; // Радиус круга в px
-const pointsCount = points.length;
-const angleStep = 360 / pointsCount;
-const targetAngle = -45; // Угол для позиции "правый верх" (примерно -45°)
+const RADIUS = 200;
+const POINTS_COUNT = points.length;
+const ANGLE_STEP = 360 / POINTS_COUNT;
+const TARGET_ANGLE = 45;
 
-export const DateCarousel: React.FC = () => {
+export default function DateCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const pointsRef = useRef<HTMLDivElement>(null);
 
-  // При клике на точку вычисляем нужный поворот
   const rotateToIndex = (index: number) => {
-    if (!containerRef.current) return;
-
-    // Угол текущей точки (i * angleStep)
-    const currentAngle = index * angleStep;
-
-    // Нужно повернуть контейнер так, чтобы эта точка оказалась на targetAngle
-    // Поворот контейнера = targetAngle - currentAngle
-    const rotation = targetAngle - currentAngle;
-
-    gsap.to(containerRef.current, {
-      rotation: rotation,
+    if (!pointsRef.current) return;
+    const currentAngle = index * ANGLE_STEP;
+    const rotation = TARGET_ANGLE - currentAngle;
+    gsap.to(pointsRef.current, {
+      rotation,
       duration: 1,
       ease: 'power2.out',
       transformOrigin: '50% 50%',
     });
-
     setActiveIndex(index);
   };
 
-  // Инициализация — повернём к первой точке
   useEffect(() => {
     rotateToIndex(0);
   }, []);
 
   return (
-    <div style={{ textAlign: 'center', userSelect: 'none' }}>
-      <div
-        ref={containerRef}
-        style={{
-          position: 'relative',
-          width: radius * 2 + 40,
-          height: radius * 2 + 40,
-          margin: '0 auto',
-          borderRadius: '50%',
-          // Можно добавить бордер или фон для наглядности
-          // border: '1px solid #ccc',
-          transformOrigin: '50% 50%',
-        }}
-      >
-        {points.map((point, i) => {
-          const angleDeg = i * angleStep - 90; // сдвигаем на -90°, чтобы точка 0 была сверху
-          const angleRad = (angleDeg * Math.PI) / 180;
-          const x = radius + radius * Math.cos(angleRad);
-          const y = radius + radius * Math.sin(angleRad);
-
-          return (
-            <div
-              key={point.id}
-              onClick={() => rotateToIndex(i)}
-              style={{
-                position: 'absolute',
-                left: x,
-                top: y,
-                width: 30,
-                height: 30,
-                borderRadius: '50%',
-                backgroundColor:
-                  i === activeIndex ? '#007bff' : '#ccc',
-                color: '#fff',
-                lineHeight: '30px',
-                textAlign: 'center',
-                cursor: 'pointer',
-                userSelect: 'none',
-                transform: 'translate(-50%, -50%)',
-                boxShadow:
-                  i === activeIndex
-                    ? '0 0 10px #007bff'
-                    : 'none',
-                transition: 'background-color 0.3s',
-              }}
-              title={point.label}
-            >
-              {i + 1}
-            </div>
-          );
-        })}
+    <div className={styles.carousel}>
+      <div className={styles.carousel_container}>
+        <div className={styles.carousel_circle} />
+        {/* <div className={styles.centerPoint} /> */}
+        <div ref={pointsRef} className={styles.carousel_points}>
+          {points.map((point, i) => {
+            const angleDeg = i * ANGLE_STEP - 90;
+            const angleRad = (angleDeg * Math.PI) / 180;
+            const x = RADIUS + 20 + RADIUS * Math.cos(angleRad);
+            const y = RADIUS + 20 + RADIUS * Math.sin(angleRad);
+            return (
+              <div
+                key={point.id}
+                onClick={() => rotateToIndex(i)}
+                className={`${styles.carousel_points_item} ${
+                  i === activeIndex ? styles.active : ''
+                }`}
+                style={{ left: x, top: y }}
+                title={point.label}
+              >
+                {i + 1}
+              </div>
+            );
+          })}
+        </div>
       </div>
-
-      <div style={{ marginTop: 40, minHeight: 100 }}>
+      <div className={styles.content}>
         {points[activeIndex].content}
       </div>
     </div>
   );
-};
+}

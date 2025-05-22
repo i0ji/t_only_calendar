@@ -1,0 +1,12 @@
+:root {
+  --slider-radius: 200px;
+  --slider-size: calc(var(--slider-radius) * 2 + 40px);
+  --point-size: 36px;
+  --point-active-bg: #007bff;
+  --point-inactive-bg: #ccc;
+  --point-active-shadow: 0 0 10px #007bff;
+  --center-point-size: 16px;
+  --center-point-bg: #007bff;
+  --center-point-shadow: 0 0 10px #007bff55;
+  --circle-border-color: #007bff;
+}

@@ -111,3 +111,10 @@ const science_data = {
     },
   ],
 };
+
+export const data_set = [
+  cinema_data,
+  literature_data,
+  theater_data,
+  science_data,
+];

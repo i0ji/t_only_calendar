@@ -2,12 +2,13 @@
 @forward 'colors';
 @forward 'mixin';
 @forward 'font';
+@forward 'vars';
 
 @use 'mixin' as mixin;
 @use 'colors' as colors;
 
 body {
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
 
   background: colors.$brand-gray-bg;
