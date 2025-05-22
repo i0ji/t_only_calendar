@@ -7,13 +7,13 @@ export default function App() {
   return (
     <section className={styles.main}>
       <div className={styles.wrapper}>
-        <div className={styles.title}>
+        {/* <div className={styles.title}>
           <hr />
           <h1>
             Исторические
             <br /> даты
           </h1>
-        </div>
+        </div> */}
 
         <DateCarousel />
       </div>
