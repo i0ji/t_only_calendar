@@ -1,5 +1,6 @@
 const cinema_data = {
   id: 20001,
+  count_number: 1,
   name: 'Кино',
   events: [
     {
@@ -32,6 +33,7 @@ const cinema_data = {
 
 const literature_data = {
   id: 30001,
+  count_number: 2,
   name: 'Литература',
   events: [
     {
@@ -55,6 +57,7 @@ const literature_data = {
 
 const theater_data = {
   id: 40001,
+  count_number: 3,
   name: 'Театр',
   events: [
     {
@@ -77,6 +80,7 @@ const theater_data = {
 
 const science_data = {
   id: 60001,
+  count_number: 4,
   name: 'Наука',
   events: [
     {

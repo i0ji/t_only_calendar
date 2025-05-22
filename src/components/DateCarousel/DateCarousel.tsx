@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import styles from './DateCarousel.module.scss';
+import { data_set } from '../../data/data';
 
 const points = [
   {
@@ -37,11 +38,15 @@ const points = [
 
 const RADIUS = 200;
 const POINTS_COUNT = points.length;
-const ANGLE_STEP = 360 / POINTS_COUNT;
+const ANGLE_STEP = 360 / data_set.length;
 const TARGET_ANGLE = 45;
 
 export default function DateCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [hoverIndex, setHoverIndex] = useState<number | null>(
+    null
+  );
+  const [currentRotation, setCurrentRotation] = useState(0);
   const pointsRef = useRef<HTMLDivElement>(null);
 
   const rotateToIndex = (index: number) => {
@@ -53,6 +58,13 @@ export default function DateCarousel() {
       duration: 1,
       ease: 'power2.out',
       transformOrigin: '50% 50%',
+      onUpdate: () => {
+        const r = gsap.getProperty(
+          pointsRef.current!,
+          'rotation'
+        ) as number;
+        setCurrentRotation(r);
+      },
     });
     setActiveIndex(index);
   };
@@ -64,28 +76,52 @@ export default function DateCarousel() {
   return (
     <div className={styles.carousel}>
       <div className={styles.carousel_container}>
+        <div className={styles.crossLines}>
+          <div className={styles.lineVertical} />
+          <div className={styles.lineHorizontal} />
+        </div>
         <div className={styles.carousel_circle} />
-        {/* <div className={styles.centerPoint} /> */}
-        <div ref={pointsRef} className={styles.carousel_points}>
+        <div
+          ref={pointsRef}
+          className={styles.carousel_points}
+          style={{ pointerEvents: 'none' }}
+        >
           {points.map((point, i) => {
             const angleDeg = i * ANGLE_STEP - 90;
             const angleRad = (angleDeg * Math.PI) / 180;
             const x = RADIUS + 20 + RADIUS * Math.cos(angleRad);
             const y = RADIUS + 20 + RADIUS * Math.sin(angleRad);
+
+            const isActive = i === activeIndex;
+            const isHovered = i === hoverIndex;
+
             return (
               <div
                 key={point.id}
                 onClick={() => rotateToIndex(i)}
+                onMouseEnter={() => setHoverIndex(i)}
+                onMouseLeave={() => setHoverIndex(null)}
                 className={`${styles.carousel_points_item} ${
-                  i === activeIndex ? styles.active : ''
-                }`}
-                style={{ left: x, top: y }}
+                  isActive ? styles.active : ''
+                } ${isHovered && !isActive ? styles.hover : ''}`}
+                style={{
+                  left: x,
+                  top: y,
+                  pointerEvents: 'auto',
+                  transform: `translate(-50%, -50%) rotate(${-currentRotation}deg)`,
+                }}
                 title={point.label}
               >
-                {i + 1}
+                {(isActive || isHovered) && (
+                  <span className={styles.number}>{i + 1}</span>
+                )}
               </div>
             );
           })}
+        </div>
+        {/* <div className={styles.centerPoint} /> */}
+        <div className={styles.label}>
+          {points[activeIndex].label}
         </div>
       </div>
       <div className={styles.content}>
