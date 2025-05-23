@@ -3,6 +3,9 @@
 .slider {
   max-width: 1440px;
   margin: 0 auto;
+  height: 30%;
+
+  @include test(null, red);
   .slider_item {
     display: flex;
     flex-direction: column;
