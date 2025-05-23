@@ -5,3 +5,7 @@ main markup, style, set webpack;
 22.05.25:
 add nanoid lib; add data sets; start swiper;
 main logic: slider, gsap circle animation; add data sets;
+refactor basic markup/layout;
+23.05.25
+finished basic carousel layot: finish float date, crosslines, fload active label;
+start bottom slider;
