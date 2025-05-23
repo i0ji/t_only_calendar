@@ -2,6 +2,8 @@ $brand-gray-bg: rgba(226, 229, 236, 0.6);
 $brand-accent-blue: rgb(70, 94, 236);
 $brand-accent-pink: rgb(235, 90, 168);
 
+//TODO: refacotr color function
+//LATER
 @function brand-dark-blue($opacity: 1) {
   @return rgba(66, 86, 122, $opacity);
 }

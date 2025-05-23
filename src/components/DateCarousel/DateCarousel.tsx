@@ -54,6 +54,12 @@ export default function DateCarousel() {
           <p className={styles.float_date_left}>{min_year}</p>
           <p className={styles.float_date_right}>{max_year}</p>
         </div>
+        <div className={styles.carousel_lines}>
+          <div className={styles.horizontal} />
+
+          <div className={styles.vertical} />
+        </div>
+
         <div className={styles.carousel_circle}>
           <div className={styles.label}>
             {data_set[activeIndex].label}
