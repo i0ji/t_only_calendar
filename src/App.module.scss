@@ -1,9 +1,39 @@
-.container {
-  padding: 20px;
-  background-color: #f0f0f0;
-}
+@use '/src/styles/index' as *;
 
-.title {
-  color: #007acc;
-  font-family: Arial, sans-serif;
+.main {
+  position: relative;
+
+  .title {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 30%;
+
+    hr {
+      width: 5px;
+      height: 120px;
+
+      background: linear-gradient(
+        180deg,
+        //LATER
+        #ef5da8 0%,
+        #3877ee 100%
+      );
+    }
+
+    h1 {
+      padding-bottom: 5px;
+
+      color: brand-dark-blue(0.8);
+
+      line-height: 120%;
+      font-weight: 700;
+      font-size: 56px;
+    }
+  }
+
+  .wrapper {
+    height: 75vh;
+  }
 }

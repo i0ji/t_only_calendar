@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+body {
+  background-color: rgba(244, 245, 249, 0.1);
+
+  max-width: 1400px;
+  height: 100vh;
+
+  margin: 0 auto;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}

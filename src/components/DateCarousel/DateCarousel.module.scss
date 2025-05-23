@@ -1,0 +1,161 @@
+@use '/src/styles/index' as *;
+
+.carousel {
+  @include flex(column, space-between, center);
+
+  max-width: 1440px;
+  height: 100%;
+
+  text-align: center;
+
+  user-select: none;
+
+  &_container {
+    position: relative;
+
+    @include flex(null, center, center);
+
+    width: 100%;
+    height: var(--slider-size);
+  }
+
+  //CURRENT
+  .carousel_lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 50;
+
+    .horizontal {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: brand-dark-blue(0.1);
+      transform: translateY(-50%);
+    }
+
+    .vertical {
+      position: fixed;
+      left: 50%;
+      top: 0;
+      height: 100%;
+      width: 1px;
+      background-color: brand-dark-blue(0.1);
+      transform: translateX(-50%);
+    }
+  }
+
+  //CURRENT
+  .float_date {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+
+    @include flex(null, space-between, null);
+
+    width: 53%;
+
+    font-size: 9rem;
+    font-weight: bold;
+
+    z-index: 60;
+
+    //LATER
+    &_left {
+      color: $brand-accent-blue;
+    }
+
+    &_right {
+      color: $brand-accent-pink;
+    }
+  }
+
+  &_circle {
+    position: absolute;
+
+    width: var(--slider-size);
+    height: var(--slider-size);
+
+    border-radius: 50%;
+    border: 2px solid brand-dark-blue(0.2);
+
+    pointer-events: none;
+  }
+
+  &_points {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    scale: 1.1;
+    width: var(--slider-size);
+    height: var(--slider-size);
+
+    pointer-events: none;
+
+    &_item {
+      @include flex(null, center, center);
+      position: absolute;
+
+      width: 8px;
+      height: 8px;
+
+      background: brand-dark-blue(0.8);
+      color: transparent;
+
+      border-radius: 50%;
+
+      font-weight: bold;
+      font-size: 14px;
+
+      transform: translate(-50%, -50%);
+      transition: width 0.3s ease, height 0.3s ease,
+        background 0.3s ease, box-shadow 0.3s ease;
+
+      cursor: pointer;
+      user-select: none;
+      pointer-events: auto;
+
+      &.hover,
+      &.active {
+        width: 56px;
+        height: 56px;
+
+        background-color: rgb(238, 239, 243);
+        color: brand-dark-blue(1);
+
+        border: 1px solid brand-dark-blue(1);
+      }
+    }
+  }
+
+  .number {
+    transform: rotate(calc(var(--rotation, 0deg) * -1));
+    user-select: none;
+  }
+
+  .label {
+    position: absolute;
+    top: 14%;
+    right: -23%;
+
+    width: 25%;
+
+    color: brand-dark-blue(1);
+
+    text-align: left;
+    font-weight: bold;
+    font-size: 18px;
+    white-space: nowrap;
+
+    transform: translateY(-50%);
+
+    pointer-events: none;
+    user-select: none;
+  }
+}

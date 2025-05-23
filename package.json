@@ -1,44 +1,44 @@
 {
-  "name": "t_only_calendar",
-  "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "webpack serve --mode development",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.11.0",
-  "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-customizable"
-    },
-    "cz-customizable": {
-      "config": "commitizen.js"
-    }
-  },
-  "devDependencies": {
-    "@babel/core": "^7.27.1",
-    "@babel/preset-env": "^7.27.2",
-    "@babel/preset-react": "^7.27.1",
-    "@babel/preset-typescript": "^7.27.1",
-    "babel-loader": "^10.0.0",
-    "css-loader": "^7.1.2",
-    "cz-customizable": "^7.4.0",
-    "html-webpack-plugin": "^5.6.3",
-    "mini-css-extract-plugin": "^2.9.2",
-    "sass": "^1.89.0",
-    "sass-loader": "^16.0.5",
-    "ts-loader": "^9.5.2",
-    "typescript": "^5.8.3",
-    "webpack": "^5.99.9",
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.1"
-  }
+	"scripts": {
+		"start": "webpack serve --mode development",
+		"build": "webpack --mode production",
+		"type-check": "tsc --noEmit"
+	},
+	"dependencies": {
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0"
+	},
+	"config": {
+		"commitizen": {
+			"path": "node_modules/cz-customizable"
+		},
+		"cz-customizable": {
+			"config": "commitizen.js"
+		}
+	},
+	"devDependencies": {
+		"@babel/core": "^7.27.1",
+		"@babel/preset-env": "^7.27.2",
+		"@babel/preset-react": "^7.27.1",
+		"@babel/preset-typescript": "^7.27.1",
+		"@types/node": "^22.15.21",
+		"@types/react": "^19.1.5",
+		"@types/react-dom": "^19.1.5",
+		"babel-loader": "^10.0.0",
+		"css-loader": "^7.1.2",
+		"cz-customizable": "^7.4.0",
+		"file-loader": "^6.2.0",
+		"gsap": "^3.13.0",
+		"html-webpack-plugin": "^5.6.3",
+		"mini-css-extract-plugin": "^2.9.2",
+		"nanoid": "^5.1.5",
+		"sass": "^1.89.0",
+		"sass-loader": "^16.0.5",
+		"style-loader": "^4.0.0",
+		"swiper": "^11.2.7",
+		"typescript": "^5.8.3",
+		"webpack": "^5.99.9",
+		"webpack-cli": "^6.0.1",
+		"webpack-dev-server": "^5.2.1"
+	}
 }

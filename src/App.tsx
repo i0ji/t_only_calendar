@@ -1,14 +1,22 @@
-// import React from 'react';
 import styles from './App.module.scss';
+import DateCarousel from './components/DateCarousel/DateCarousel';
 
-const App: React.FC = () => {
+console.log('22.05.25/0.1.0');
+
+export default function App() {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>
-        Hteee
-      </h1>
-    </div>
-  );
-};
+    <section className={styles.main}>
+      <div className={styles.wrapper}>
+        {/* <div className={styles.title}>
+          <hr />
+          <h1>
+            Исторические
+            <br /> даты
+          </h1>
+        </div> */}
 
-export default App;
+        <DateCarousel />
+      </div>
+    </section>
+  );
+}
