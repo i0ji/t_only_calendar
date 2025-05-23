@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import styles from './DateCarousel.module.scss';
-import { data_set } from '../../data/data';
-import DateSlider from '../DateSlider/DateSlider';
+import { data_set } from '@assets/data';
+import DateSlider from '@components/DateSlider/DateSlider';
 
-import CarouselNav from '../CarouselNav/CarouselNav';
+import CarouselNav from '@components/CarouselNav/CarouselNav';
 
 const RADIUS = 200;
 const POINTS_COUNT = data_set.length;
@@ -79,13 +79,6 @@ export default function DateCarousel() {
           activeIndex={activeIndex}
           dataLength={POINTS_COUNT}
         />
-        {/* <div className={styles.carousel_navigation}>
-          <p className={styles.carousel_navigation_count}>
-            {activeIndex + 1} / {POINTS_COUNT}
-          </p>
-          <button onClick={handlePrevDate}> &#60; </button>
-          <button onClick={handleNextDate}>&gt;</button>
-        </div> */}
 
         <div className={styles.carousel_circle}>
           <div className={styles.label}>

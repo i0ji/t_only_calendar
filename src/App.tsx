@@ -1,20 +1,13 @@
 import styles from './App.module.scss';
-import DateCarousel from './components/DateCarousel/DateCarousel';
+import DateCarousel from '@components/DateCarousel/DateCarousel';
 
-console.log('22.05.25/0.1.0');
+//CONSOLE
+console.log('23.05.25/0.4.0');
 
 export default function App() {
   return (
     <section className={styles.main}>
       <div className={styles.wrapper}>
-        {/* <div className={styles.title}>
-          <hr />
-          <h1>
-            Исторические
-            <br /> даты
-          </h1>
-        </div> */}
-
         <DateCarousel />
       </div>
     </section>

@@ -35,13 +35,27 @@
       height: 50px;
 
       background-color: rgb(238, 239, 243);
-      color: colors.brand-dark-blue(0.5);
 
       border-radius: 50%;
       border: 1px solid colors.brand-dark-blue(0.5);
 
       font-weight: 400;
       font-size: 20px;
+
+      svg {
+        width: 18px;
+        height: 18px;
+        fill: colors.brand-dark-blue(0.1);
+        stroke: colors.brand-dark-blue(0.1);
+      }
+    }
+
+    :nth-child(1) > svg {
+      margin-right: 2px;
+    }
+
+    :last-child > svg {
+      margin-left: 2px;
     }
 
     button:hover,
@@ -49,6 +63,10 @@
       color: colors.brand-dark-blue(1);
       border: 1px solid colors.brand-dark-blue(1);
       transition: all 1s ease;
+
+      svg {
+        fill: colors.brand-dark-blue(1);
+      }
     }
   }
 }

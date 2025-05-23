@@ -1,6 +1,6 @@
 import styles from './CarouselNav.module.scss';
-import prev from '../../assets/prev.png';
-import next from '../../assets/next.png';
+import IconNext from '@assets/icon_next.svg';
+import IconPrev from '@assets/icon_prev.svg';
 
 export default function CarouselNavigation(props: ICarouselNav) {
   return (
@@ -10,10 +10,10 @@ export default function CarouselNavigation(props: ICarouselNav) {
       </p>
       <div className={styles.nav_controls}>
         <button onClick={props.handlePrev}>
-          <img src={prev} alt="НАЗАД" />
+          <IconPrev />
         </button>
         <button onClick={props.handleNext}>
-          <img src={next} alt="ВПЕРЁД" />
+          <IconNext />
         </button>
       </div>
     </div>

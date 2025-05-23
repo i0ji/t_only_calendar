@@ -22,3 +22,8 @@ interface ICarouselNav {
   handleNext: () => void;
   handlePrev: () => void;
 }
+
+interface ICommonButton
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+}
