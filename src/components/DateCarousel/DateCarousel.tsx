@@ -53,53 +53,56 @@ export default function DateCarousel() {
         <p className={styles.float_date_left}>{min_year}</p>
         <p className={styles.float_date_right}>{max_year}</p>
       </div> */}
+
       <div className={styles.carousel_container}>
-        {/* <div className={styles.crossLines}>
-          <div className={styles.lineVertical} />
-          <div className={styles.lineHorizontal} />
-        </div> */}
+        <div className={styles.carousel_circle}>
+          <div className={styles.label}>
+            {data_set[activeIndex].label}
+          </div>
+          <div
+            ref={pointsRef}
+            className={styles.carousel_points}
+            style={{ pointerEvents: 'none' }}
+          >
+            {data_set.map((data_item, i) => {
+              const angleDeg = i * ANGLE_STEP - 90;
+              const angleRad = (angleDeg * Math.PI) / 180;
+              const x =
+                RADIUS + 20 + RADIUS * Math.cos(angleRad);
+              const y =
+                RADIUS + 20 + RADIUS * Math.sin(angleRad);
 
-        <div className={styles.carousel_circle} />
-        <div
-          ref={pointsRef}
-          className={styles.carousel_points}
-          style={{ pointerEvents: 'none' }}
-        >
-          {data_set.map((data_item, i) => {
-            const angleDeg = i * ANGLE_STEP - 90;
-            const angleRad = (angleDeg * Math.PI) / 180;
-            const x = RADIUS + 20 + RADIUS * Math.cos(angleRad);
-            const y = RADIUS + 20 + RADIUS * Math.sin(angleRad);
+              const isActive = i === activeIndex;
+              const isHovered = i === hoverIndex;
 
-            const isActive = i === activeIndex;
-            const isHovered = i === hoverIndex;
-
-            return (
-              <div
-                key={data_item.id}
-                onClick={() => rotateToIndex(i)}
-                onMouseEnter={() => setHoverIndex(i)}
-                onMouseLeave={() => setHoverIndex(null)}
-                className={`${styles.carousel_points_item} ${
-                  isActive ? styles.active : ''
-                } ${isHovered && !isActive ? styles.hover : ''}`}
-                style={{
-                  left: x,
-                  top: y,
-                  pointerEvents: 'auto',
-                  transform: `translate(-50%, -50%) rotate(${-currentRotation}deg)`,
-                }}
-                title={data_item.label}
-              >
-                {(isActive || isHovered) && (
-                  <span className={styles.number}>{i + 1}</span>
-                )}
-              </div>
-            );
-          })}
-        </div>
-        <div className={styles.label}>
-          {data_set[activeIndex].label}
+              return (
+                <div
+                  key={data_item.id}
+                  onClick={() => rotateToIndex(i)}
+                  onMouseEnter={() => setHoverIndex(i)}
+                  onMouseLeave={() => setHoverIndex(null)}
+                  className={`${styles.carousel_points_item} ${
+                    isActive ? styles.active : ''
+                  } ${
+                    isHovered && !isActive ? styles.hover : ''
+                  }`}
+                  style={{
+                    left: x,
+                    top: y,
+                    pointerEvents: 'auto',
+                    transform: `translate(-50%, -50%) rotate(${-currentRotation}deg)`,
+                  }}
+                  title={data_item.label}
+                >
+                  {(isActive || isHovered) && (
+                    <span className={styles.number}>
+                      {i + 1}
+                    </span>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
       <DateSlider data={current_content} />
