@@ -8,9 +8,6 @@
   text-align: center;
   user-select: none;
 
-  //TEST
-  border: 2px solid red;
-
   &_container {
     position: relative;
 
@@ -18,48 +15,28 @@
 
     width: 100%;
     height: var(--slider-size);
-    // margin: 9% auto;
   }
-  // .crossLines {
-  //   position: absolute;
-  //   left: 50%;
-  //   top: 50%;
-  //   width: 100%;
-  //   height: 100%;
-  //   pointer-events: none; /* чтобы линии не мешали кликам */
-  //   transform: translate(-50%, -50%);
-  //   z-index: 0; /* под точками */
-  // }
 
-  // .lineVertical {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 50%;
-  //   width: 2px; /* толщина линии */
-  //   height: 100%;
-  //   background-color: rgba(0, 123, 255, 0.2);
-  //   transform: translateX(-50%);
-  // }
+  .float_date {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
 
-  // .float_date {
-  //   position: absolute;
-  //   top: 13%;
-  //   left: 50%;
-  //   transform: translate(-50%);
-  //   width: 53%;
-  //   display: flex;
-  //   justify-content: space-between;
-  //   font-size: 9rem;
-  //   font-weight: bold;
+    @include flex(null, space-between, null);
 
-  //   &_left {
-  //     color: $brand-accent-blue;
-  //   }
+    width: 53%;
 
-  //   &_right {
-  //     color: $brand-accent-pink;
-  //   }
-  // }
+    font-size: 9rem;
+    font-weight: bold;
+
+    &_left {
+      color: $brand-accent-blue;
+    }
+
+    &_right {
+      color: $brand-accent-pink;
+    }
+  }
 
   &_circle {
     position: absolute;

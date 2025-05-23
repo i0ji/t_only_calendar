@@ -49,12 +49,11 @@ export default function DateCarousel() {
 
   return (
     <div className={styles.carousel}>
-      {/* <div className={styles.float_date}>
-        <p className={styles.float_date_left}>{min_year}</p>
-        <p className={styles.float_date_right}>{max_year}</p>
-      </div> */}
-
       <div className={styles.carousel_container}>
+        <div className={styles.float_date}>
+          <p className={styles.float_date_left}>{min_year}</p>
+          <p className={styles.float_date_right}>{max_year}</p>
+        </div>
         <div className={styles.carousel_circle}>
           <div className={styles.label}>
             {data_set[activeIndex].label}

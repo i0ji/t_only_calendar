@@ -3,28 +3,28 @@
 module.exports = {
   types: [
     {
-      value: 'build',
+      value: 'BUILD',
       name: 'BUILD',
     },
-    { value: 'ci', name: 'CI/CD/SCRIPTS' },
-    { value: 'docs', name: 'DOCUMENTS' },
-    { value: 'feat', name: 'FEATURES' },
-    { value: 'fix', name: 'FIX BUGS/ISSUES' },
-    { value: 'git', name: 'GIT TASKS' },
+    { value: 'CI', name: 'CI/CD/SCRIPTS' },
+    { value: 'DOCS', name: 'DOCUMENTS' },
+    { value: 'FEATURE', name: 'FEATURES' },
+    { value: 'FIX', name: 'FIX BUGS/ISSUES' },
+    { value: 'GIT', name: 'GIT TASKS' },
     {
-      value: 'chore',
+      value: 'CHORE',
       name: 'CHORE',
     },
     {
-      value: 'refactor',
+      value: 'REFACTOR',
       name: 'REFACTOR',
     },
-    { value: 'revert', name: 'REVERT' },
+    { value: 'REVERT', name: 'REVERT' },
     {
-      value: 'style',
+      value: 'STYLE',
       name: 'STYLE',
     },
-    { value: 'test', name: 'TEST' },
+    { value: 'TEST', name: 'TEST' },
   ],
 
   scopes: [

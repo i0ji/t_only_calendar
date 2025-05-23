@@ -12,8 +12,11 @@ html {
 
   body {
     @include mixin.flex(null, center, center);
+
     max-width: 1440px;
     margin: 0 auto;
     height: 100vh;
+
+    border: 1px solid colors.brand-dark-blue(0.1);
   }
 }
