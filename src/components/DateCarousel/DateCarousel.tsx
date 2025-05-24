@@ -35,24 +35,20 @@ const points: PointData[] = [
   },
 ];
 
-const radius = 120; // Радиус круга в px
+const radius = 120;
 const pointsCount = points.length;
 const angleStep = 360 / pointsCount;
-const targetAngle = -45; // Угол для позиции "правый верх" (примерно -45°)
+const targetAngle = -45;
 
 export const DateCarousel: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // При клике на точку вычисляем нужный поворот
   const rotateToIndex = (index: number) => {
     if (!containerRef.current) return;
 
-    // Угол текущей точки (i * angleStep)
     const currentAngle = index * angleStep;
 
-    // Нужно повернуть контейнер так, чтобы эта точка оказалась на targetAngle
-    // Поворот контейнера = targetAngle - currentAngle
     const rotation = targetAngle - currentAngle;
 
     gsap.to(containerRef.current, {
@@ -65,7 +61,6 @@ export const DateCarousel: React.FC = () => {
     setActiveIndex(index);
   };
 
-  // Инициализация — повернём к первой точке
   useEffect(() => {
     rotateToIndex(0);
   }, []);
@@ -80,13 +75,11 @@ export const DateCarousel: React.FC = () => {
           height: radius * 2 + 40,
           margin: '0 auto',
           borderRadius: '50%',
-          // Можно добавить бордер или фон для наглядности
-          // border: '1px solid #ccc',
           transformOrigin: '50% 50%',
         }}
       >
         {points.map((point, i) => {
-          const angleDeg = i * angleStep - 90; // сдвигаем на -90°, чтобы точка 0 была сверху
+          const angleDeg = i * angleStep - 90;
           const angleRad = (angleDeg * Math.PI) / 180;
           const x = radius + radius * Math.cos(angleRad);
           const y = radius + radius * Math.sin(angleRad);
