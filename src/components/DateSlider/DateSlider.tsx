@@ -58,23 +58,25 @@ export default function DateSlider({
             </SwiperSlide>
           );
         })}
+        <div className={styles.slider_nav}>
+          <button
+            ref={prevRef}
+            className={styles.slider_nav_prev}
+            style={{
+              visibility: isBeginning ? 'hidden' : 'visible',
+            }}
+          >
+            <IconPrev />
+          </button>
+          <button
+            ref={nextRef}
+            className={styles.slider_nav_next}
+            style={{ visibility: isEnd ? 'hidden' : 'visible' }}
+          >
+            <IconNext />
+          </button>
+        </div>
       </Swiper>
-      <div className={styles.slider_nav}>
-        <button
-          ref={prevRef}
-          className={styles.slider_nav_prev}
-          style={{ visibility: isBeginning  ? 'hidden' : 'visible' }}
-        >
-          <IconPrev />
-        </button>
-        <button
-          ref={nextRef}
-          className={styles.slider_nav_next}
-          style={{ visibility: isEnd ? 'hidden' : 'visible' }}
-        >
-          <IconNext />
-        </button>
-      </div>
     </div>
   );
 }

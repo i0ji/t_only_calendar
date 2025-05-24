@@ -1,7 +1,7 @@
 @use '/src/styles/index' as *;
 
 .carousel {
-  @include flex(column, space-between, center);
+  @include flex(column, space-around, center);
 
   max-width: 1440px;
   height: 100%;
@@ -19,7 +19,6 @@
     height: var(--slider-size);
   }
 
-  //CURRENT
   .carousel_lines {
     position: absolute;
     top: 0;
@@ -50,13 +49,12 @@
     }
   }
 
-  //CURRENT
   .float_date {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
 
-    @include flex(null, space-between, null);
+    // @include flex(null, space-between, null);
 
     width: 53%;
 
