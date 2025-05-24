@@ -9,3 +9,7 @@ refactor basic markup/layout;
 23.05.25
 finished basic carousel layot: finish float date, crosslines, fload active label;
 start bottom slider;
+24.05.25
+style, common fixes;
+add buttons visibility logic when rich the end or at the begining;
+fix slider style;

@@ -1,8 +1,7 @@
-import { useRef } from 'react';
+import { useState, useRef } from 'react';
 
 import styles from './DateSlider.module.scss';
 
-//CURRENT
 import IconNext from '@assets/icon_next.svg';
 import IconPrev from '@assets/icon_prev.svg';
 
@@ -18,32 +17,14 @@ export default function DateSlider({
 }: {
   data: IEvent[];
 }) {
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
     <div className={styles.slider}>
-      {/* <Swiper
-        slidesPerView={3.5}
-        spaceBetween={30}
-        loop={false}
-        modules={[Navigation]}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={false}
-        onBeforeInit={(swiper) => {
-          if (
-            typeof swiper.params.navigation !== 'boolean' &&
-            swiper.params.navigation
-          ) {
-            swiper.params.navigation.prevEl = prevRef.current;
-            swiper.params.navigation.nextEl = nextRef.current;
-          }
-        }}
-        className="mySwiper"
-      > */}
-
       <Swiper
         modules={[Navigation]}
         slidesPerView={3.5}
@@ -61,6 +42,10 @@ export default function DateSlider({
             swiper.params.navigation.nextEl = nextRef.current;
           }
         }}
+        onSlideChange={(swiper) => {
+          setIsBeginning(swiper.isBeginning);
+          setIsEnd(swiper.isEnd);
+        }}
       >
         {data.map((content_item, i) => {
           return (
@@ -75,10 +60,18 @@ export default function DateSlider({
         })}
       </Swiper>
       <div className={styles.slider_nav}>
-        <button ref={prevRef} className={styles.slider_nav_prev}>
+        <button
+          ref={prevRef}
+          className={styles.slider_nav_prev}
+          style={{ visibility: isBeginning  ? 'hidden' : 'visible' }}
+        >
           <IconPrev />
         </button>
-        <button ref={nextRef} className={styles.slider_nav_next}>
+        <button
+          ref={nextRef}
+          className={styles.slider_nav_next}
+          style={{ visibility: isEnd ? 'hidden' : 'visible' }}
+        >
           <IconNext />
         </button>
       </div>

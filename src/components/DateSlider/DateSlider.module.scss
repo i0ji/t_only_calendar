@@ -10,8 +10,11 @@
 
   //TEST FIX
   //LATER
-//   @include test(null, red);
+  //   @include test(null, red);
 
+
+  //FIXME
+  //HEIGHT
   :nth-child(1) {
     width: 80%;
   }
@@ -28,7 +31,7 @@
     h5 {
       margin-bottom: 15px;
 
-           text-align: left;
+      text-align: left;
       font-family: 'Babes Neue', sans-serif;
       font-size: 25px;
       font-weight: 700;
@@ -72,6 +75,18 @@
 
     .slider_nav_next {
       right: 5%;
+    }
+
+    &_prev,
+    &_next {
+      transition: opacity 0.3s ease;
+
+      &_prev,
+      &_next {
+        &.disabled {
+          display: none !important; // Полное скрытие
+        }
+      }
     }
   }
 }

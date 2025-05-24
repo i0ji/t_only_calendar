@@ -1,9 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
-import gsap from 'gsap';
 import styles from './DateCarousel.module.scss';
-import { data_set } from '@assets/data';
-import DateSlider from '@components/DateSlider/DateSlider';
 
+import gsap from 'gsap';
+
+import { data_set } from '@assets/data';
+
+import DateSlider from '@components/DateSlider/DateSlider';
+import FloatDescription from '@components/FloatDescription/FloatDescription';
 import CarouselNav from '@components/CarouselNav/CarouselNav';
 
 const RADIUS = 200;
@@ -69,9 +72,10 @@ export default function DateCarousel() {
         </div>
         <div className={styles.carousel_lines}>
           <div className={styles.horizontal} />
-
           <div className={styles.vertical} />
         </div>
+
+        <FloatDescription />
 
         <CarouselNav
           handlePrev={handlePrevDate}

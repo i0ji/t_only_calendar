@@ -1,17 +1,18 @@
-import React, { forwardRef } from 'react';
+//OPTION
+// import React, { forwardRef } from 'react';
 
-import styles from './CommonButton.module.scss';
+// import styles from './CommonButton.module.scss';
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
+// type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-const CommonButton = forwardRef<HTMLButtonElement, ButtonProps>(
-  (props, ref) => (
-    <button
-      className={styles.common_button}
-      ref={ref}
-      {...props}
-    />
-  )
-);
+// const CommonButton = forwardRef<HTMLButtonElement, ButtonProps>(
+//   (props, ref) => (
+//     <button
+//       className={styles.common_button}
+//       ref={ref}
+//       {...props}
+//     />
+//   )
+// );
 
-export default CommonButton;
+// export default CommonButton;

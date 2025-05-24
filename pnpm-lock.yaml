@@ -73,8 +73,8 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0(webpack@5.99.9)
       swiper:
-        specifier: ^11.2.7
-        version: 11.2.7
+        specifier: ^11.2.8
+        version: 11.2.8
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -2486,8 +2486,8 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
-  swiper@11.2.7:
-    resolution: {integrity: sha512-oPJCwdcjFMw3SoBM7AdB1RJzjT7JaE4Mg7TWceTmJ/i2OtF8L01Ct+5eOf48nG3trgR0wXFekWdfnTdl0eg6Pg==}
+  swiper@11.2.8:
+    resolution: {integrity: sha512-S5FVf6zWynPWooi7pJ7lZhSUe2snTzqLuUzbd5h5PHUOhzgvW0bLKBd2wv0ixn6/5o9vwc/IkQT74CRcLJQzeg==}
     engines: {node: '>= 4.7.0'}
 
   tapable@2.2.2:
@@ -5303,7 +5303,7 @@ snapshots:
       csso: 5.0.5
       picocolors: 1.1.1
 
-  swiper@11.2.7: {}
+  swiper@11.2.8: {}
 
   tapable@2.2.2: {}
 
