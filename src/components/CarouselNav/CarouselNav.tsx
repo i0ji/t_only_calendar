@@ -9,10 +9,16 @@ export default function CarouselNavigation(props: ICarouselNav) {
         {props.activeIndex + 1}/{props.dataLength}
       </p>
       <div className={styles.nav_controls}>
-        <button onClick={props.handlePrev}>
+        <button
+          onClick={props.handlePrev}
+          disabled={props.isPrevDisabled}
+        >
           <IconPrev />
         </button>
-        <button onClick={props.handleNext}>
+        <button
+          onClick={props.handleNext}
+          disabled={props.isNextDisabled}
+        >
           <IconNext />
         </button>
       </div>

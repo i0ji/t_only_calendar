@@ -7,13 +7,14 @@ $brand-colors: (
   'accent-blue': rgb(70, 94, 236),
   'accent-pink': rgb(235, 90, 168),
   'dark-blue': rgb(66, 86, 122),
+  'hr': rgb(199, 205, 217),
 );
 
 @function brand($name, $opacity: 1) {
   $color: map.get($brand-colors, $name);
 
   @if $color == null {
-    @error "Color `#{$name}` not found in \$brand-colors map.";
+    @error "Color `#{$name}` not in \$brand-colors map.";
   }
 
   @return rgba(
@@ -23,8 +24,3 @@ $brand-colors: (
     $opacity
   );
 }
-
-//FIXME LATER
-// $gray: rgba(226, 229, 236, 0.6);
-// $accent-blue: rgb(70, 94, 236);
-// $accent-pink: rgb(235, 90, 168);

@@ -21,6 +21,8 @@ interface ICarouselNav {
   dataLength: number;
   handleNext: () => void;
   handlePrev: () => void;
+  isPrevDisabled: boolean;
+  isNextDisabled: boolean;
 }
 
 interface ICommonButton

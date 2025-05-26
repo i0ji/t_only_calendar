@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 import styles from './DateSlider.module.scss';
 
@@ -6,7 +6,7 @@ import IconNext from '@assets/icon_next.svg';
 import IconPrev from '@assets/icon_prev.svg';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -19,17 +19,41 @@ export default function DateSlider({
 }) {
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
+  //OPTION
+  const [windowWidth, setWindowWidth] = useState(
+    window.innerWidth
+  );
+
+  useEffect(() => {
+    function onResize() {
+      setWindowWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
 
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
+
+  //OPTION
+  const isMobile = windowWidth <= 320;
 
   return (
     <div className={styles.slider}>
       <hr />
       <Swiper
-        modules={[Navigation]}
+        modules={[Navigation, Pagination]}
         slidesPerView={3.5}
+        breakpoints={{
+          0: {
+            slidesPerView: 1.5,
+          },
+          321: {
+            slidesPerView: 3.5,
+          },
+        }}
         spaceBetween={30}
+        pagination={isMobile && { clickable: true }}
         navigation={{
           prevEl: prevRef.current,
           nextEl: nextRef.current,

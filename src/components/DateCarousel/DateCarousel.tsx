@@ -53,14 +53,17 @@ export default function DateCarousel() {
   }, []);
 
   const handleNextDate = () => {
-    const newIndex = (activeIndex + 1) % POINTS_COUNT;
-    rotateToIndex(newIndex);
+    if (activeIndex < POINTS_COUNT - 1) {
+      const newIndex = activeIndex + 1;
+      rotateToIndex(newIndex);
+    }
   };
 
   const handlePrevDate = () => {
-    const newIndex =
-      (activeIndex - 1 + POINTS_COUNT) % POINTS_COUNT;
-    rotateToIndex(newIndex);
+    if (activeIndex > 0) {
+      const newIndex = activeIndex - 1;
+      rotateToIndex(newIndex);
+    }
   };
 
   return (
@@ -82,6 +85,8 @@ export default function DateCarousel() {
           handleNext={handleNextDate}
           activeIndex={activeIndex}
           dataLength={POINTS_COUNT}
+          isPrevDisabled={activeIndex === 0}
+          isNextDisabled={activeIndex === POINTS_COUNT - 1}
         />
 
         <div className={styles.carousel_circle}>
