@@ -1,7 +1,7 @@
 @use '/src/styles/index' as *;
 
 .carousel {
-  @include flex(column, space-around, center);
+  @include flex(column, null, center);
 
   max-width: 1440px;
   height: 100%;
@@ -17,6 +17,8 @@
 
     width: 100%;
     height: var(--slider-size);
+
+    margin-bottom: 5rem;
   }
 
   .carousel_lines {

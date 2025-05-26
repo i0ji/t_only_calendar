@@ -1,17 +1,14 @@
 @use '/src/styles/index' as *;
 
 .slider {
+  position: relative;
+
   max-width: 1440px;
   height: 25%;
 
   margin: 0 auto;
 
-  //TEST FIX
-  //LATER
-  //   @include test(null, red);
-
   //FIXME
-  //HEIGHT
   div:nth-child(1) {
     position: relative;
 
@@ -20,13 +17,12 @@
 
   &_nav {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    left: 5%;
+    top: 35%;
 
     @include flex(null, space-between, center);
 
-    width: 100%;
+    width: 90%;
 
     .slider_nav_prev,
     .slider_nav_next {
