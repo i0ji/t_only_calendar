@@ -2,7 +2,9 @@
 	"scripts": {
 		"start": "webpack serve --mode development",
 		"build": "webpack --mode production",
-		"type-check": "tsc --noEmit"
+		"type-check": "tsc --noEmit",
+		"predeploy": "pnpm run build",
+		"deploy": "gh-pages -d dist"
 	},
 	"dependencies": {
 		"react": "^19.1.0",
@@ -29,6 +31,7 @@
 		"css-loader": "^7.1.2",
 		"cz-customizable": "^7.4.0",
 		"file-loader": "^6.2.0",
+		"gh-pages": "^6.3.0",
 		"gsap": "^3.13.0",
 		"html-webpack-plugin": "^5.6.3",
 		"mini-css-extract-plugin": "^2.9.2",

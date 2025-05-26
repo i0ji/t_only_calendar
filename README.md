@@ -13,3 +13,6 @@ start bottom slider;
 style, common fixes;
 add buttons visibility logic when rich the end or at the begining;
 fix slider style;
+26.05.25
+multiple logic/style/format refactor; mobile version; disable button logic;
+GH-paghes for tests;
