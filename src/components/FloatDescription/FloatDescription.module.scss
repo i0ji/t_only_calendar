@@ -1,0 +1,27 @@
+@use '/src/styles/index' as *;
+
+.description {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  @include flex(null, space-between, null);
+
+  width: 25%;
+
+  &_gradient {
+    width: 5px;
+    height: 120px;
+    background: linear-gradient(
+      to bottom,
+      rgb(70, 94, 236),
+      rgb(235, 90, 168)
+    );
+  }
+
+  h2 {
+    color: brand-dark-blue(1);
+    font-size: 3rem;
+    text-align: left;
+  }
+}

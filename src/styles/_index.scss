@@ -2,15 +2,21 @@
 @forward 'colors';
 @forward 'mixin';
 @forward 'font';
+@forward 'vars';
 
 @use 'mixin' as mixin;
 @use 'colors' as colors;
 
-body {
-  max-width: 1400px;
-  margin: 0 auto;
+html {
+  background-color: colors.$brand-gray-bg;
 
-  background: colors.$brand-gray-bg;
+  body {
+    @include mixin.flex(null, center, center);
 
-  overflow: hidden;
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 100vh;
+
+    border: 1px solid colors.brand-dark-blue(0.1);
+  }
 }
