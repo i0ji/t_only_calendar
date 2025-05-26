@@ -19,7 +19,6 @@ export default function DateSlider({
 }) {
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
-  //OPTION
   const [windowWidth, setWindowWidth] = useState(
     window.innerWidth
   );
@@ -35,7 +34,6 @@ export default function DateSlider({
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
-  //OPTION
   const isMobile = windowWidth <= 320;
 
   return (

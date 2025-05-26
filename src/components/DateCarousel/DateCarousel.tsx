@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import styles from './DateCarousel.module.scss';
 
 import gsap from 'gsap';
+import AnimatedNumber from '@components/AnimatedNumber/AnimatedNumber';
 
 import { data_set } from '@assets/data';
 
@@ -70,8 +71,12 @@ export default function DateCarousel() {
     <div className={styles.carousel}>
       <div className={styles.carousel_container}>
         <div className={styles.float_date}>
-          <p className={styles.float_date_left}>{min_year}</p>
-          <p className={styles.float_date_right}>{max_year}</p>
+          <p className={styles.float_date_left}>
+            <AnimatedNumber number={min_year} />
+          </p>
+          <p className={styles.float_date_right}>
+            <AnimatedNumber number={max_year} />
+          </p>
         </div>
         <div className={styles.carousel_lines}>
           <div className={styles.horizontal} />

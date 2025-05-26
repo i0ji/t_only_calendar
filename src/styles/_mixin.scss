@@ -13,16 +13,3 @@
     align-items: $vertical;
   }
 }
-
-
-//TEST
-//USEFULL
-@mixin test($bg, $br) {
-  @if $bg != null {
-    background-color: $bg;
-  }
-
-  @if $br != null {
-    border: 1px solid $br;
-  }
-}

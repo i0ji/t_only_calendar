@@ -12,6 +12,7 @@
   &_gradient {
     width: 5px;
     height: 120px;
+
     background: linear-gradient(
       to bottom,
       rgb(70, 94, 236),
@@ -25,16 +26,16 @@
     text-align: left;
   }
 }
-//CURRENT
+
 @media (max-width: 320px) {
   .description {
-    
     font-size: 10px;
+
     &_gradient {
       display: none;
     }
 
-    h2 {  
+    h2 {
       padding-top: 60%;
       font-size: 20px;
     }

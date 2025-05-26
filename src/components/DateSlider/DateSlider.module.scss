@@ -8,7 +8,6 @@
 
   margin: 0 auto;
 
-  //FIXME
   div:nth-child(2) {
     position: relative;
 
@@ -107,7 +106,6 @@
 
       div:has(span) {
         top: -8%;
-        // background-color: red;
 
         span {
           color: brand('dark-blue', 1);
