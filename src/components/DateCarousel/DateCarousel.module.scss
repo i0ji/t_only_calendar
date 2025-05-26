@@ -56,14 +56,14 @@
     left: 50%;
     transform: translate(-50%);
 
-    // @include flex(null, space-between, null);
+    @include flex(null, space-between, null);
 
     width: 53%;
 
     font-size: 9rem;
     font-weight: bold;
 
-    z-index: 60;
+    // z-index: 60;
 
     //LATER
     &_left {

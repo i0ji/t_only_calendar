@@ -18,7 +18,7 @@
   &_nav {
     position: absolute;
     left: 5%;
-    top: 35%;
+    top: 30%;
 
     @include flex(null, space-between, center);
 
@@ -41,14 +41,6 @@
         fill: $brand-accent-blue;
         stroke: $brand-accent-blue;
       }
-    }
-
-    .slider_nav_prev {
-      left: 5%;
-    }
-
-    .slider_nav_next {
-      right: 5%;
     }
 
     &_prev,
