@@ -25,6 +25,7 @@ export default function DateSlider({
 
   return (
     <div className={styles.slider}>
+      <hr />
       <Swiper
         modules={[Navigation]}
         slidesPerView={3.5}

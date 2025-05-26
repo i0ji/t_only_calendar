@@ -9,10 +9,21 @@
   margin: 0 auto;
 
   //FIXME
-  div:nth-child(1) {
+  div:nth-child(2) {
     position: relative;
 
     width: 80%;
+  }
+
+  hr {
+    display: none;
+
+    height: 1px;
+    width: 100%;
+
+    background-color: brand('gray-bg', 0.6);
+
+    margin: 10px 0;
   }
 
   &_nav {
@@ -38,8 +49,8 @@
       svg {
         width: 18px;
         height: 18px;
-        fill: $brand-accent-blue;
-        stroke: $brand-accent-blue;
+        fill: brand('accent-blue', 1);
+        stroke: brand('accent-blue', 1);
       }
     }
 
@@ -50,16 +61,13 @@
       &_prev,
       &_next {
         &.disabled {
-          display: none !important; // Полное скрытие
+          display: none !important;
         }
       }
     }
   }
 
   &_item {
-    //TEST FIX
-    //LATER
-    // @include test(null, green);
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -73,7 +81,7 @@
       font-size: 25px;
       font-weight: 700;
 
-      color: $brand-accent-blue;
+      color: brand('accent-blue', 1);
     }
 
     p {
@@ -81,6 +89,30 @@
     }
     .custom-next {
       right: 10px;
+    }
+  }
+}
+@media (max-width: 320px) {
+  .slider {
+    max-width: 280px;
+    height: 50%;
+
+    font-size: 14px;
+
+    div:nth-child(1) {
+      position: relative;
+
+      width: 100%;
+    }
+
+    hr {
+      display: block;
+    }
+
+    &_item {
+      h5 {
+        font-size: 16px;
+      }
     }
   }
 }

@@ -2,7 +2,7 @@ import styles from './App.module.scss';
 import DateCarousel from '@components/DateCarousel/DateCarousel';
 
 //CONSOLE
-console.log('24.05.25/0.4.5');
+console.log('26.05.25/0.5.0');
 
 export default function App() {
   return (

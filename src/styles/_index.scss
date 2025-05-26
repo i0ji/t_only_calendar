@@ -8,7 +8,7 @@
 @use 'colors' as colors;
 
 html {
-  background-color: colors.$brand-gray-bg;
+  background-color: colors.brand('gray-bg', 0.6);
 
   body {
     @include mixin.flex(null, center, center);
@@ -17,6 +17,16 @@ html {
     margin: 0 auto;
     height: 100vh;
 
-    border: 1px solid colors.brand-dark-blue(0.1);
+    border: 1px solid colors.brand('dark-blue', 0.1);
+  }
+}
+
+@media (max-width: 320px) {
+  html > body {
+    @include mixin.flex(column, center, center);
+
+    max-width: 280px;
+    height: 100vh;
+    border: none;
   }
 }

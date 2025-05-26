@@ -1,9 +1,30 @@
-$brand-gray-bg: rgba(226, 229, 236, 0.6);
-$brand-accent-blue: rgb(70, 94, 236);
-$brand-accent-pink: rgb(235, 90, 168);
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:color';
 
-//TODO: refacotr color function
-//LATER
-@function brand-dark-blue($opacity: 1) {
-  @return rgba(66, 86, 122, $opacity);
+$brand-colors: (
+  'gray-bg': rgba(226, 229, 236, 1),
+  'accent-blue': rgb(70, 94, 236),
+  'accent-pink': rgb(235, 90, 168),
+  'dark-blue': rgb(66, 86, 122),
+);
+
+@function brand($name, $opacity: 1) {
+  $color: map.get($brand-colors, $name);
+
+  @if $color == null {
+    @error "Color `#{$name}` not found in \$brand-colors map.";
+  }
+
+  @return rgba(
+    color.channel($color, 'red', $space: rgb),
+    color.channel($color, 'green', $space: rgb),
+    color.channel($color, 'blue', $space: rgb),
+    $opacity
+  );
 }
+
+//FIXME LATER
+// $gray: rgba(226, 229, 236, 0.6);
+// $accent-blue: rgb(70, 94, 236);
+// $accent-pink: rgb(235, 90, 168);
