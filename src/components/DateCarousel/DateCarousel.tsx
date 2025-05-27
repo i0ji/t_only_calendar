@@ -28,7 +28,6 @@ export default function DateCarousel() {
   let min_year = current_content[0].year;
   let max_year =
     current_content[current_content.length - 1].year;
-  //CURRENT
   const min_year_color = 'rgb(70, 94, 236)';
   const max_year_color = 'rgb(235, 90, 168)';
 
@@ -52,9 +51,36 @@ export default function DateCarousel() {
     setActiveIndex(index);
   };
 
+  //CURRENT
+  const [displayData, setDisplayData] =
+    useState(current_content);
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const isAnimating = useRef(false);
+  //CURRENT
+
   useEffect(() => {
     rotateToIndex(0);
   }, []);
+
+  //CURRENT
+  useEffect(() => {
+    if (isAnimating.current) return;
+    if (sliderRef.current) {
+      isAnimating.current = true;
+      gsap.set(sliderRef.current, { opacity: 0 }); // мгновенное скрытие
+      setDisplayData(current_content);
+      gsap.to(sliderRef.current, {
+        opacity: 1,
+        duration: 0.3, // быстрое появление
+        onComplete: () => {
+          isAnimating.current = false;
+        },
+      });
+    } else {
+      setDisplayData(current_content);
+    }
+  }, [current_content]);
+  //CURRENT
 
   const handleNextDate = () => {
     if (activeIndex < POINTS_COUNT - 1) {
@@ -87,6 +113,7 @@ export default function DateCarousel() {
             />
           </p>
         </div>
+
         <div className={styles.carousel_lines}>
           <div className={styles.horizontal} />
           <div className={styles.vertical} />
@@ -152,8 +179,11 @@ export default function DateCarousel() {
             })}
           </div>
         </div>
+        <hr />
       </div>
-      <DateSlider data={current_content} />
+      <div className={styles.slider_container} ref={sliderRef}>
+        <DateSlider data={current_content} />
+      </div>
     </div>
   );
 }

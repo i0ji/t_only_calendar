@@ -1,15 +1,34 @@
+import { useState, useEffect } from 'react';
+
 import FlipNumbers from 'react-flip-numbers';
-import styles from './AnimatedNumber.module.scss';
 
 export default function AnimatedNumber(props: IAnimatedNumber) {
+  const [windowWidth, setWindowWidth] = useState(
+    window.innerWidth
+  );
+
+  useEffect(() => {
+    function onResize() {
+      setWindowWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  const isMobile = windowWidth <= 320;
+
   return (
     <FlipNumbers
-      height={140}
-      width={100}
+      height={isMobile ? 40 : 100}
+      width={isMobile ? 30 : 100}
       perspective={600}
       play
       color={props.color}
-      numberStyle={{ fontSize: '7rem', fontWeight: 'bold' }}
+      numberStyle={
+        isMobile
+          ? { fontSize: '3rem', fontWeight: 'bold' }
+          : { fontSize: '7rem', fontWeight: 'bold' }
+      }
       numbers={props.numbers.toString()}
     />
   );

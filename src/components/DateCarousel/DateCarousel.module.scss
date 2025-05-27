@@ -19,6 +19,20 @@
     height: var(--slider-size);
 
     margin-bottom: 5rem;
+
+    hr {
+      position: absolute;
+      bottom: 0;
+
+      display: none;
+
+      height: 2px;
+      width: 100%;
+
+      background-color: brand('hr', 0.6);
+
+      margin: 10px 0;
+    }
   }
 
   &_lines {
@@ -171,7 +185,13 @@
 
         padding-top: 40%;
 
-        font-size: 56px;
+        gap: 0;
+        // font-size: 56px;
+      }
+
+      hr {
+        margin-top: 10%;
+        display: block;
       }
     }
     &_circle {
@@ -179,6 +199,12 @@
     }
     &_lines {
       display: none;
+    }
+
+    .slider_container {
+      opacity: 1;
+      transition: all 0.1 ease;
+      height: 50%;
     }
   }
 }
