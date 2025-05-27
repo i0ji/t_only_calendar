@@ -11,9 +11,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
     clean: true,
-    publicPath: isProd
-      ? 'https://i0ji.github.io/t_only_calendar/'
-      : '/',
+    publicPath: '/'
+    // publicPath: isProd
+    //   ? 'https://i0ji.github.io/t_only_calendar/'
+    //   : '/',
   },
   module: {
     rules: [
