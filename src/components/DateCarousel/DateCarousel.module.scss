@@ -186,7 +186,6 @@
         padding-top: 40%;
 
         gap: 0;
-        // font-size: 56px;
       }
 
       hr {
@@ -202,9 +201,10 @@
     }
 
     .slider_container {
-      opacity: 1;
-      transition: all 0.1 ease;
+      width: 90%;
       height: 50%;
+
+      transition: all 0.1 ease;
     }
   }
 }

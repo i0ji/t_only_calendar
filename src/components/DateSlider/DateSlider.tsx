@@ -46,7 +46,7 @@ export default function DateSlider({
             slidesPerView: 1.5,
           },
           321: {
-            slidesPerView: 3.5,
+            slidesPerView: 3,
           },
         }}
         spaceBetween={30}

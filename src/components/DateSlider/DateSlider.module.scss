@@ -3,30 +3,28 @@
 .slider {
   position: relative;
 
-  max-width: 1440px;
   height: 25%;
 
+  max-width: 1440px;
   margin: 0 auto;
 
   cursor: pointer;
 
-  div:nth-child(2) {
-    position: relative;
-
-    width: 80%;
-  }
-
   &_nav {
     position: absolute;
-    left: 5%;
-    top: 30%;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
 
     @include flex(null, space-between, center);
 
-    width: 90%;
+    width: 98%;
 
-    .slider_nav_prev,
-    .slider_nav_next {
+    opacity: 0.5;
+
+    &_prev,
+    &_next {
+      transition: opacity 0.3s ease;
       @include flex(null, center, center);
       width: 40px;
       height: 40px;
@@ -42,11 +40,6 @@
         fill: brand('accent-blue', 1);
         stroke: brand('accent-blue', 1);
       }
-    }
-
-    &_prev,
-    &_next {
-      transition: opacity 0.3s ease;
 
       &_prev,
       &_next {

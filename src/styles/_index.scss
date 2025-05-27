@@ -31,6 +31,10 @@ html {
   }
 }
 
+:global(.swiper) {
+  width: 90%;
+}
+
 :global(.swiper-pagination-clickable) {
   position: absolute;
   bottom: 10%;
