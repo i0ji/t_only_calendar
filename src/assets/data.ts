@@ -1,15 +1,14 @@
-const science_data1 = {
+const tech_data = {
   id: 10001,
   count_number: 1,
-  label: 'Наука',
+  label: 'Технологии',
   content: [
     {
-      year: 2015,
-      description:
-        '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды',
+      year: 1980,
+      description: 'Sinclair Rwesearch выпускает компьютер ZX80',
     },
     {
-      year: 2016,
+      year: 1982,
       description:
         'Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11',
     },
@@ -133,35 +132,33 @@ const theater_data = {
   ],
 };
 
-const science_data5 = {
+const sport_data = {
   id: 50001,
   count_number: 5,
-  label: 'Наука',
+  label: 'Спорт',
   content: [
     {
-      year: 2015,
+      year: 2006,
       description:
-        '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды',
+        'Баскетбольный клуб ЦСКА стал победителем национального первенства России',
     },
     {
-      year: 2016,
+      year: 2008,
       description:
-        'Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11',
+        'С 8 по 24 августа в Пекине прошли 29-е летние Олимпийские игры',
     },
     {
-      year: 2017,
+      year: 2010,
       description:
-        'Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi',
+        '13-28 февраля в Ванкувере: Зимние Олимпийские игры 2010 года',
     },
     {
-      year: 2018,
-      description:
-        'Старт космического аппарата Solar Probe Plus, предназначенного для изучения солнца',
+      year: 2012,
+      description: '2 августа - Летние Олимпийские игры',
     },
     {
-      year: 2019,
-      description:
-        'Google объявил о создании 53-кубитного квантового компьютера',
+      year: 2014,
+      description: 'XXII зимние Олимпийские игры (Сочи, Россия)',
     },
     {
       year: 2020,
@@ -171,7 +168,7 @@ const science_data5 = {
   ],
 };
 
-const science_data6 = {
+const science_data = {
   id: 60001,
   count_number: 6,
   label: 'Наука',
@@ -210,10 +207,10 @@ const science_data6 = {
 };
 
 export const data_set = [
-  science_data1,
+  tech_data,
   cinema_data,
   literature_data,
   theater_data,
-  science_data5,
-  science_data6,
+  sport_data,
+  science_data,
 ];

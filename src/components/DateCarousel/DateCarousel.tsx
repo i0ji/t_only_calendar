@@ -28,6 +28,9 @@ export default function DateCarousel() {
   let min_year = current_content[0].year;
   let max_year =
     current_content[current_content.length - 1].year;
+  //CURRENT
+  const min_year_color = 'rgb(70, 94, 236)';
+  const max_year_color = 'rgb(235, 90, 168)';
 
   const rotateToIndex = (index: number) => {
     if (!pointsRef.current) return;
@@ -71,11 +74,17 @@ export default function DateCarousel() {
     <div className={styles.carousel}>
       <div className={styles.carousel_container}>
         <div className={styles.float_date}>
-          <p className={styles.float_date_left}>
-            <AnimatedNumber number={min_year} />
+          <p className={styles.float_date_min}>
+            <AnimatedNumber
+              color={min_year_color}
+              numbers={min_year}
+            />
           </p>
-          <p className={styles.float_date_right}>
-            <AnimatedNumber number={max_year} />
+          <p className={styles.float_date_max}>
+            <AnimatedNumber
+              color={max_year_color}
+              numbers={max_year}
+            />
           </p>
         </div>
         <div className={styles.carousel_lines}>

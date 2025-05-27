@@ -1,6 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { watch } = require('fs');
+
+const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
   entry: './src/index.tsx',
@@ -8,7 +11,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
     clean: true,
-    publicPath: 'https://i0ji.github.io/t_only_calendar/',
+    publicPath: isProd
+      ? 'https://i0ji.github.io/t_only_calendar/'
+      : '/',
   },
   module: {
     rules: [
@@ -68,13 +73,15 @@ module.exports = {
     }),
   ],
   devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
+    // static: {
+    //   directory: path.join(__dirname, 'dist'),
+    //   watch: true,
+    // },
     compress: true,
     port: 3000,
     hot: true,
     open: true,
+    historyApiFallback: true,
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],

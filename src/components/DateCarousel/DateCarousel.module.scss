@@ -61,18 +61,19 @@
     left: 50%;
     transform: translate(-50%);
 
-    @include flex(null, space-between, null);
+    @include flex(null, space-between, center);
 
-    width: 53%;
+    gap: 2rem;
 
-    font-size: 9rem;
-    font-weight: bold;
+    height: 10rem;
 
-    &_left {
+    z-index: 80;
+
+    &_min {
       color: brand('accent-blue', 0.9);
     }
 
-    &_right {
+    &_max {
       color: brand('accent-pink', 0.9);
     }
   }

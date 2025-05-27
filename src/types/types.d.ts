@@ -29,3 +29,8 @@ interface ICommonButton
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }
+
+interface IAnimatedNumber {
+  numbers: number;
+  color: string;
+}

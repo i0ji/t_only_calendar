@@ -51,6 +51,7 @@ export default function DateSlider({
           },
         }}
         spaceBetween={30}
+        grabCursor={true}
         pagination={isMobile && { clickable: true }}
         navigation={{
           prevEl: prevRef.current,
