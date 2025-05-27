@@ -11,7 +11,6 @@ export default function AnimatedNumber(props: IAnimatedNumber) {
       color={props.color}
       numberStyle={{ fontSize: '7rem', fontWeight: 'bold' }}
       numbers={props.numbers.toString()}
-      // nonNumberStyle={{ fontSize: '8rem', fontWeight: 'bold' }}
     />
   );
 }
