@@ -1,14 +1,14 @@
-To run:
+<h2> Slide calendar that implements the test task for the position of FE developer in "Only"</h2>
 
-powershell/bash: 
-**1:** using powershell/bash<code>git clone https://github.com/i0ji/t_only_calendar</code><br>
+
+
+<h5>To run:</h5>
+<b>Powershell/bash:</b><br>
+**1:** using powershell/bash <code>git clone https://github.com/i0ji/t_only_calendar</code><br>
 **2:** <code>cd t_only_calendar</code><br>
 **3:** <code>pnpm install</code><br>
 **4:** <code>pnpm start</code><br>
 **5:** open <code>http://localhost:3000/</code> in browser<br>
-
-GH-Pages: https://i0ji.github.io/t_only_calendar/
-"homepage": "https://username.github.io/t_only_calendar"
 
 <h5>Libs/tech/loaders usage:</h5>
 <ul>
