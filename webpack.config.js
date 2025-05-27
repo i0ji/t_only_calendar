@@ -12,9 +12,6 @@ module.exports = {
     filename: 'bundle.js',
     clean: true,
     publicPath: '/'
-    // publicPath: isProd
-    //   ? 'https://i0ji.github.io/t_only_calendar/'
-    //   : '/',
   },
   module: {
     rules: [
