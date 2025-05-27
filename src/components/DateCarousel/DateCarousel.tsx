@@ -51,6 +51,34 @@ export default function DateCarousel() {
     setActiveIndex(index);
   };
 
+  const [displayContent, setDisplayContent] = useState(
+    data_set[0].content
+  );
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const isAnimating = useRef(false);
+  useEffect(() => {
+    if (isAnimating.current) return;
+    if (sliderRef.current) {
+      isAnimating.current = true;
+      gsap.to(sliderRef.current, {
+        opacity: 0,
+        duration: 0.3,
+        onComplete: () => {
+          setDisplayContent(current_content);
+          gsap.to(sliderRef.current, {
+            opacity: 1,
+            duration: 0.3,
+            onComplete: () => {
+              isAnimating.current = false;
+            },
+          });
+        },
+      });
+    } else {
+      setDisplayContent(current_content);
+    }
+  }, [current_content]);
+
   useEffect(() => {
     rotateToIndex(0);
   }, []);
@@ -154,7 +182,9 @@ export default function DateCarousel() {
         </div>
         <hr />
       </div>
-      <DateSlider data={current_content} />
+      <div className={styles.carousel_slider} ref={sliderRef}>
+        <DateSlider data={displayContent} />
+      </div>
     </div>
   );
 }

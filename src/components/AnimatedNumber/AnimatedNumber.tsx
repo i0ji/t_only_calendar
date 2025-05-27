@@ -19,7 +19,7 @@ export default function AnimatedNumber(props: IAnimatedNumber) {
 
   return (
     <FlipNumbers
-      height={isMobile ? 40 : 100}
+      height={isMobile ? 40 : 140}
       width={isMobile ? 30 : 100}
       perspective={600}
       play
