@@ -2,15 +2,15 @@
 
 
 
-<h5>To run:</h5>
+<h3>To run:</h5>
 <b>Powershell/bash:</b><br>
-**1:** using powershell/bash <code>git clone https://github.com/i0ji/t_only_calendar</code><br>
-**2:** <code>cd t_only_calendar</code><br>
-**3:** <code>pnpm install</code><br>
-**4:** <code>pnpm start</code><br>
-**5:** open <code>http://localhost:3000/</code> in browser<br>
+1: using powershell/bash <code>git clone https://github.com/i0ji/t_only_calendar</code><br>
+2: <code>cd t_only_calendar</code><br>
+3: <code>pnpm install</code><br>
+4: <code>pnpm start</code><br>
+5: open <code>http://localhost:3000/</code> in browser<br>
 
-<h5>Libs/tech/loaders usage:</h5>
+<h3>Libs/tech/loaders usage:</h5>
 <ul>
 <li>React/TS/SASS</li>
   <li>Libs:
@@ -33,7 +33,7 @@
 <li>Commitizen</li>
 </ul>
 
-<h5>Short commit comments:</h5> 
+<h3>Short commit comments:</h5> 
 21.05.25:
 project init using webpack/react/sass/ts/git flow; repo init; first dev run; styling and preparigne env;
 main markup, style, set webpack;<br>
