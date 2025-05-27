@@ -1,9 +1,14 @@
 To run:
 
-**1:** <code>git clone https://github.com/i0ji/t_only_calendar</code><br>
+powershell/bash: 
+**1:** using powershell/bash<code>git clone https://github.com/i0ji/t_only_calendar</code><br>
 **2:** <code>cd t_only_calendar</code><br>
 **3:** <code>pnpm install</code><br>
 **4:** <code>pnpm start</code><br>
+**5:** open <code>http://localhost:3000/</code> in browser<br>
+
+GH-Pages: https://i0ji.github.io/t_only_calendar/
+"homepage": "https://username.github.io/t_only_calendar"
 
 <h5>Libs/tech/loaders usage:</h5>
 <ul>
