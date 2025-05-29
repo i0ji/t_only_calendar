@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -10,7 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.[contenthash].js',
     clean: true,
-    publicPath: isProd ? '/t_only_calendar/' : '/',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -67,6 +68,9 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: 'src/404.html', to: '404.html' }],
     }),
   ],
   devServer: {
