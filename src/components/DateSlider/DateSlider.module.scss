@@ -22,6 +22,10 @@
 
     opacity: 0.5;
 
+    &_next {
+      padding-left: 0.2rem;
+    }
+
     &_prev,
     &_next {
       transition: opacity 0.3s ease;
@@ -44,7 +48,7 @@
       &_prev,
       &_next {
         &.disabled {
-          display: none !important;
+          display: none;
         }
       }
     }
