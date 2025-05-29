@@ -52,8 +52,7 @@ fix slider style;<br>
 multiple logic/style/format refactor; mobile version; disable button logic;
 GH-paghes for tests;<br>
 27.05.25
-finish all logic but memoise slider nav buttons;
+finish all logic but memoise slider nav buttons;<br>
 29.05.25
 small style/layout touches; deps update;
-setup gh-pages;
-
+setup gh-pages;<br>
