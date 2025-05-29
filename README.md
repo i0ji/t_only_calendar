@@ -1,5 +1,7 @@
 <h2> Slide calendar that implements the test task for the position of FE developer in "Only"</h2>
 
+Available: https://i0ji.github.io/t_only_calendar/
+
 <h3>To run:</h5>
 <b>Powershell/bash:</b><br>
 1: using powershell/bash <code>git clone https://github.com/i0ji/t_only_calendar</code><br>
@@ -54,3 +56,4 @@ finish all logic but memoise slider nav buttons;
 29.05.25
 small style/layout touches; deps update;
 setup gh-pages;
+
