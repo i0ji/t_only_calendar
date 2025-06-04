@@ -56,3 +56,5 @@ finish all logic but memoise slider nav buttons;<br>
 29.05.25
 small style/layout touches; deps update;
 setup gh-pages;<br>
+04.06.25
+deps update;<br>
