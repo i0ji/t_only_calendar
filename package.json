@@ -8,8 +8,8 @@
 		"deploy": "gh-pages -d dist"
 	},
 	"dependencies": {
-		"react": "^19.1.0",
-		"react-dom": "^19.1.0"
+		"react": "^19.1.1",
+		"react-dom": "^19.1.1"
 	},
 	"config": {
 		"commitizen": {
@@ -20,32 +20,32 @@
 		}
 	},
 	"devDependencies": {
-		"@babel/core": "^7.27.3",
-		"@babel/preset-env": "^7.27.2",
+		"@babel/core": "^7.28.3",
+		"@babel/preset-env": "^7.28.3",
 		"@babel/preset-react": "^7.27.1",
 		"@babel/preset-typescript": "^7.27.1",
 		"@emotion/is-prop-valid": "^1.3.1",
 		"@svgr/webpack": "^8.1.0",
-		"@types/node": "^22.15.24",
-		"@types/react": "^19.1.6",
-		"@types/react-dom": "^19.1.5",
+		"@types/node": "^24.3.0",
+		"@types/react": "^19.1.10",
+		"@types/react-dom": "^19.1.7",
 		"babel-loader": "^10.0.0",
-		"copy-webpack-plugin": "^13.0.0",
+		"copy-webpack-plugin": "^13.0.1",
 		"css-loader": "^7.1.2",
-		"cz-customizable": "^7.4.0",
+		"cz-customizable": "^7.5.0",
 		"file-loader": "^6.2.0",
 		"gh-pages": "^6.3.0",
 		"gsap": "^3.13.0",
-		"html-webpack-plugin": "^5.6.3",
-		"mini-css-extract-plugin": "^2.9.2",
+		"html-webpack-plugin": "^5.6.4",
+		"mini-css-extract-plugin": "^2.9.4",
 		"react-flip-numbers": "^3.0.9",
-		"sass": "^1.89.0",
+		"sass": "^1.90.0",
 		"sass-loader": "^16.0.5",
 		"style-loader": "^4.0.0",
-		"swiper": "^11.2.8",
-		"typescript": "^5.8.3",
-		"webpack": "^5.99.9",
+		"swiper": "^11.2.10",
+		"typescript": "^5.9.2",
+		"webpack": "^5.101.3",
 		"webpack-cli": "^6.0.1",
-		"webpack-dev-server": "^5.2.1"
+		"webpack-dev-server": "^5.2.2"
 	}
 }
