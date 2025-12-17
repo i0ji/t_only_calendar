@@ -1,4 +1,4 @@
-<h2> Slide calendar that implements the test task for the position of FE developer in "Only"</h2>
+<h2> Slide/Carousel test for FE dev position in "Only"</h2>
 
 Available: https://i0ji.github.io/t_only_calendar/
 
@@ -56,3 +56,5 @@ finish all logic but memoise slider nav buttons;<br>
 29.05.25
 small style/layout touches; deps update;
 setup gh-pages;<br>
+04.06.25
+deps update;<br>
